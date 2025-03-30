@@ -1,5 +1,5 @@
-![New Note Diagram](exercise%200.4.png)
+![New Note Diagram](exercise%200.4.png) 
 
-![Another Diagram](SPA%20exercise%200.5.png)
+![Single page app diagram](SPA%20exercise%200.5.png)
 
-![Final Diagram](Exercise%200.6.png)
+![New note in Single page app diagram](Exercise%200.6.png)
