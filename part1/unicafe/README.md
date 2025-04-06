@@ -79,17 +79,9 @@ The application was expanded to include more statistics:
 
 ### 1.8: Unicafe Step 3
 
-The statistics are now displayed in a separate `Statistics` component, improving the structure and organization of the code.
+The statistics are now displayed only once feedback has been gathered. If no feedback has been submitted, a message "No feedback given" is displayed.
 
 ### 1.9: Unicafe Step 4
-
-The statistics are only shown once feedback has been gathered. If no feedback has been submitted, a message "No feedback given" is displayed.
-
-### 1.10: Unicafe Step 5
-
-The `Button` and `StatisticLine` components were extracted into their own components to improve code organization. Each button now handles its respective feedback type.
-
-### 1.11: Unicafe Step 6
 
 The statistics are displayed in a neat HTML table, making the feedback information more structured and easy to read.
 
@@ -98,10 +90,11 @@ The statistics are displayed in a neat HTML table, making the feedback informati
 ```plaintext
 unicafe-feedback-app/
 ├── public/
-│   ├── index.html   
+│   ├── index.html
+│   └── other public assets
 ├── src/
-│   ├── App.jsx   
-│   └── main.jsx
+│   ├── App.jsx
+│   └── index.jsx
 ├── .gitignore
 ├── README.md
 ├── vite.config.js
