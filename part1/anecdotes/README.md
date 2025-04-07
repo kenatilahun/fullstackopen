@@ -22,4 +22,4 @@ To run the development server locally:
 2. Install dependencies:
    ```bash
    npm install 
-npm run dev
+   npm run dev
