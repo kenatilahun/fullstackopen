@@ -25,3 +25,6 @@ All components are defined inside `App.jsx` to match the exercise instructions.
 2. Install dependencies:
    ```bash
    npm install
+   npm run dev
+Open the app in your browser:
+http://localhost:5173
