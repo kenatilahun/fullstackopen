@@ -46,11 +46,14 @@ To run the development server locally:
 2. Install dependencies:
    ```bash
    npm install
-project-folder/
-├── App.jsx
-├── main.jsx
-├── index.html
-├── package.json
+unicafe-feedback-app/
+├── public/
+│   ├── index.html
+│   └── other public assets
+├── src/
+│   ├── App.jsx
+│   └── index.jsx
+├── .gitignore
 ├── README.md
-└── vite.config.js
-
+├── vite.config.js
+└── package.json
