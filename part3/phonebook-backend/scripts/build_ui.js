@@ -9,6 +9,15 @@ const backendDist = path.join(backendRoot, 'dist')
 
 const npmCmd = process.platform === 'win32' ? 'npm.cmd' : 'npm'
 
+const install = spawnSync(npmCmd, ['install', '--no-audit', '--no-fund'], {
+  cwd: frontendRoot,
+  stdio: 'inherit',
+})
+
+if (install.status !== 0) {
+  throw new Error('Failed to install frontend dependencies')
+}
+
 const build = spawnSync(npmCmd, ['run', 'build'], {
   cwd: frontendRoot,
   stdio: 'inherit',
