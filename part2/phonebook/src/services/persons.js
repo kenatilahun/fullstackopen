@@ -1,6 +1,9 @@
 import axios from 'axios'
 
-const baseUrl = 'http://localhost:3001/persons'
+const baseUrl =
+  import.meta.env.MODE === 'development'
+    ? 'http://localhost:3001/api/persons'
+    : '/api/persons'
 
 const getAll = () => axios.get(baseUrl).then((response) => response.data)
 
