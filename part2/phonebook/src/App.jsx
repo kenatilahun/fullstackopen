@@ -40,8 +40,10 @@ const App = () => {
           setNewNumber('')
           showNotification(`Added ${createdPerson.name}`)
         })
-        .catch(() => {
-          showNotification('Failed to add person', 'error')
+        .catch((error) => {
+          const errorMessage =
+            error?.response?.data?.error ?? 'Failed to add person'
+          showNotification(errorMessage, 'error')
         })
       return
     }
@@ -63,12 +65,19 @@ const App = () => {
         setNewNumber('')
         showNotification(`Updated ${returnedPerson.name}`)
       })
-      .catch(() => {
-        setPersons(persons.filter((person) => person.id !== existingPerson.id))
-        showNotification(
-          `Information of ${existingPerson.name} has already been removed from server`,
-          'error',
-        )
+      .catch((error) => {
+        if (error?.response?.status === 404) {
+          setPersons(persons.filter((person) => person.id !== existingPerson.id))
+          showNotification(
+            `Information of ${existingPerson.name} has already been removed from server`,
+            'error',
+          )
+          return
+        }
+
+        const errorMessage =
+          error?.response?.data?.error ?? `Failed to update ${existingPerson.name}`
+        showNotification(errorMessage, 'error')
       })
   }
 
