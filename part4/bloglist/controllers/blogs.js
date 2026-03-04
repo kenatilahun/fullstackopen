@@ -15,10 +15,7 @@ blogsRouter.get('/', async (request, response) => {
 blogsRouter.post('/', middleware.userExtractor, async (request, response) => {
   const { title, author, url, likes } = request.body
 
-  const user = await User.findById(request.user.id)
-  if (!user) {
-    return response.status(401).json({ error: 'token invalid' })
-  }
+  const user = request.user
 
   const blog = new Blog({
     title,
@@ -47,7 +44,7 @@ blogsRouter.delete('/:id', middleware.userExtractor, async (request, response) =
     return response.status(404).end()
   }
 
-  if (blog.user.toString() !== request.user.id) {
+  if (blog.user.toString() !== request.user.id.toString()) {
     return response.status(403).json({ error: 'only creator can delete a blog' })
   }
 
@@ -84,4 +81,3 @@ blogsRouter.put('/:id', async (request, response) => {
 })
 
 module.exports = blogsRouter
-
