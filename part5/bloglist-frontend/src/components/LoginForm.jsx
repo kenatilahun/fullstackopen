@@ -7,8 +7,9 @@ const LoginForm = ({
 }) => (
   <form onSubmit={handleSubmit}>
     <div>
-      username
+      <label htmlFor="username">username</label>
       <input
+        id="username"
         data-testid="username"
         type="text"
         value={username}
@@ -17,8 +18,9 @@ const LoginForm = ({
       />
     </div>
     <div>
-      password
+      <label htmlFor="password">password</label>
       <input
+        id="password"
         data-testid="password"
         type="password"
         value={password}
@@ -31,4 +33,3 @@ const LoginForm = ({
 )
 
 export default LoginForm
-

@@ -1,19 +1,19 @@
 import { defineConfig, devices } from '@playwright/test'
 
 export default defineConfig({
-  testDir: './e2e',
+  testDir: './tests',
   fullyParallel: false,
   retries: 0,
   workers: 1,
   reporter: 'html',
   use: {
-    baseURL: 'http://127.0.0.1:4173',
+    baseURL: 'http://127.0.0.1:5173',
     trace: 'on-first-retry',
   },
   webServer: {
-    command: 'npm run dev:test',
-    url: 'http://127.0.0.1:4173',
-    reuseExistingServer: true,
+    command: "powershell -NoProfile -Command \"$env:VITE_BACKEND_URL='http://127.0.0.1:3005'; Set-Location '../bloglist-frontend'; npm.cmd run dev -- --host 127.0.0.1 --port 5173\"",
+    url: 'http://127.0.0.1:5173',
+    reuseExistingServer: false,
   },
   projects: [
     {
