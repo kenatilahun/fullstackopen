@@ -1,5 +1,30 @@
 #root {
   margin: 0 auto;
-  max-width: 720px;
+  max-width: 760px;
   padding: 2rem 1rem;
+}
+
+.success,
+.error {
+  border-style: solid;
+  border-radius: 5px;
+  background: #e5e7eb;
+  font-size: 1.1rem;
+  padding: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.success {
+  color: #166534;
+}
+
+.error {
+  color: #991b1b;
+}
+
+.blog {
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #9ca3af;
+  margin-bottom: 0.4rem;
+  background: #fff;
 }
