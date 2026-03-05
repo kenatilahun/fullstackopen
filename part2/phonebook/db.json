@@ -23,12 +23,12 @@
     {
       "id": "28a9",
       "name": "kena",
-      "number": "0917797456"
+      "number": "091-7797456"
     },
     {
-      "id": "9ab3",
-      "name": "",
-      "number": ""
+      "id": "268f",
+      "name": "Linus Torvalds",
+      "number": "040-1234567"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
