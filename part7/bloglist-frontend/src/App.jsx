@@ -20,6 +20,8 @@ const App = () => {
   const { user, userDispatch } = useUserContext()
   const { notification, showNotification } = useNotification()
   const queryClient = useQueryClient()
+  const userMatch = useMatch('/users/:id')
+  const blogMatch = useMatch('/blogs/:id')
 
   useEffect(() => {
     const loggedUserJSON = window.localStorage.getItem('loggedBlogappUser')
@@ -139,9 +141,6 @@ const App = () => {
 
   const blogs = blogsQuery.data?.slice().sort((a, b) => b.likes - a.likes) || []
   const users = usersQuery.data || []
-
-  const userMatch = useMatch('/users/:id')
-  const blogMatch = useMatch('/blogs/:id')
 
   const matchedUser = userMatch
     ? users.find((entry) => entry.id === userMatch.params.id)
